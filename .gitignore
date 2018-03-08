@@ -1,0 +1,5 @@
+velocity.log
+.idea/*
+*.iml
+**/target/*
+*/logs/*
