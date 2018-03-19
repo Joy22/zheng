@@ -25,6 +25,9 @@ public class RequestParameterUtil {
                 }
             }
         }
-        return null;
+        if(StringUtils.isNotBlank(params)){
+            backUrl = backUrl.append("?").append(params);
+        }
+        return backUrl.toString();
     }
 }

@@ -3,11 +3,13 @@ package com.zheng.upms.client.shiro.filter;
 import com.zheng.common.util.PropertiesFileUtil;
 import com.zheng.common.util.RedisUtil;
 import com.zheng.upms.client.shiro.session.UpmsSessionDao;
+import com.zheng.upms.client.util.RequestParameterUtil;
 import com.zheng.upms.common.constant.UpmsConstant;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.AuthenticationFilter;
+import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,8 @@ import redis.clients.jedis.Jedis;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * 重写authc过滤器
@@ -40,9 +44,12 @@ public class UpmsAuthenticationFilter extends AuthenticationFilter{
         String upmsType = PropertiesFileUtil.getInstance("zheng-upms-client").get("zheng.upms.type");
         session.setAttribute(UpmsConstant.UPMS_TYPE, upmsType);
         if("client".equals(upmsType)){
-
+            return validateClient(request, response);
         }
-        return super.isAccessAllowed(request, response, mappedValue);
+        if("server".equals(upmsType)){
+            return subject.isAuthenticated();
+        }
+        return false;
     }
 
     @Override
@@ -65,7 +72,13 @@ public class UpmsAuthenticationFilter extends AuthenticationFilter{
             jedis.close();
             // 移除url的code参数
             if (null != request.getParameter("code")) {
-
+                String backUrl = RequestParameterUtil.getParameterWithOutCode(WebUtils.toHttp(request));
+                HttpServletResponse httpServletResponse = WebUtils.toHttp(response);
+                try {
+                    httpServletResponse.sendRedirect(backUrl.toString());
+                } catch (IOException e) {
+                    LOGGER.error("局部会话已登录，移除code");
+                }
             }
         }
         return true;
