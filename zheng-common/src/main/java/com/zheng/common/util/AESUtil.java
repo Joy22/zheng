@@ -126,6 +126,6 @@ public class AESUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(AESUtil.aesEncode("12345678"));
+        System.out.println(AESUtil.aesEncode("foobared"));
     }
 }

@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>zheng-upms-server</artifactId>
+    <packaging>war</packaging>
 
     <profiles>
         <profile>
@@ -79,6 +80,11 @@
         <dependency>
             <groupId>com.zheng</groupId>
             <artifactId>zheng-upms-client</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zheng</groupId>
+            <artifactId>zheng-admin</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
