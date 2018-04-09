@@ -52,13 +52,13 @@
                         password="123456" />
 
         <!-- model生成 -->
-        <javaModelGenerator targetPackage="com.zheng.upms.dao.model" targetProject="F:/Study/Java/zheng/zheng-upms/zheng-upms-dao/src/main/java" />
+        <javaModelGenerator targetPackage="com.zheng.upms.dao.model" targetProject="F:/Study/Java/github/zheng/zheng-upms/zheng-upms-dao/src/main/java" />
 
         <!-- MapperXML生成 -->
-        <sqlMapGenerator targetPackage="com.zheng.upms.dao.mapper" targetProject="F:/Study/Java/zheng/zheng-upms/zheng-upms-rpc-service/src/main/java" />
+        <sqlMapGenerator targetPackage="com.zheng.upms.dao.mapper" targetProject="F:/Study/Java/github/zheng/zheng-upms/zheng-upms-rpc-service/src/main/java" />
 
         <!-- Mapper接口生成 -->
-        <javaClientGenerator targetPackage="com.zheng.upms.dao.mapper" targetProject="F:/Study/Java/zheng/zheng-upms/zheng-upms-dao/src/main/java" type="XMLMAPPER" />
+        <javaClientGenerator targetPackage="com.zheng.upms.dao.mapper" targetProject="F:/Study/Java/github/zheng/zheng-upms/zheng-upms-dao/src/main/java" type="XMLMAPPER" />
 
         <!-- 需要映射的表 -->
                                     <table tableName="upms_log" domainObjectName="UpmsLog"></table>

@@ -130,12 +130,11 @@ public class MybatisGeneratorUtil {
         System.out.println("========= 开始生成Service =========");
         String ctime = new SimpleDateFormat("yyyy/M/d").format(new Date());
         String servicePath = basePath + module + "/" + module + "-rpc-api" + "/src/main/java/" + packageName.replaceAll("\\.", "/") + "/rpc/api";
-        String serviceMockPath = basePath + module + "/" + module + "-rpc-api" + "/src/main/java/" + packageName.replaceAll("\\.", "/") + "/rpc/api/mock";
         String serviceImplPath = basePath + module + "/" + module + "-rpc-service" + "/src/main/java/" + packageName.replaceAll("\\.", "/") + "/rpc/service/impl";
         for(int i = 0; i < tables.size(); i++){
             String model = lineToHump(ObjectUtils.toString(tables.get(i).get("table_name")));
             String service = servicePath + "/" + model + "Service.java";
-            String serviceMock = serviceMockPath + "/" + model + "ServiceMock.java";
+            String serviceMock = servicePath + "/" + model + "ServiceMock.java";
             String serviceImpl = serviceImplPath + "/" + model + "ServiceImpl.java";
 
             // 生成service

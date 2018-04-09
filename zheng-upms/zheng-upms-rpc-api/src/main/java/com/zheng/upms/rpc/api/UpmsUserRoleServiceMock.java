@@ -1,15 +1,14 @@
-package com.zheng.upms.rpc.api.mock;
+package com.zheng.upms.rpc.api;
 
 import com.zheng.common.base.BaseServiceMock;
 import com.zheng.upms.dao.mapper.UpmsUserRoleMapper;
 import com.zheng.upms.dao.model.UpmsUserRole;
 import com.zheng.upms.dao.model.UpmsUserRoleExample;
-import com.zheng.upms.rpc.api.UpmsUserRoleService;
 
 /**
 * 降级实现UpmsUserRoleService接口
 * @author Joy
-* @date 2018/3/2
+* @date 2018/4/9
 */
 public class UpmsUserRoleServiceMock extends BaseServiceMock<UpmsUserRoleMapper, UpmsUserRole, UpmsUserRoleExample> implements UpmsUserRoleService {
 

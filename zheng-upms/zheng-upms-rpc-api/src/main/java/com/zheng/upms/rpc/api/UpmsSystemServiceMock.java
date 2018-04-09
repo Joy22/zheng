@@ -1,15 +1,14 @@
-package com.zheng.upms.rpc.api.mock;
+package com.zheng.upms.rpc.api;
 
 import com.zheng.common.base.BaseServiceMock;
 import com.zheng.upms.dao.mapper.UpmsSystemMapper;
 import com.zheng.upms.dao.model.UpmsSystem;
 import com.zheng.upms.dao.model.UpmsSystemExample;
-import com.zheng.upms.rpc.api.UpmsSystemService;
 
 /**
 * 降级实现UpmsSystemService接口
 * @author Joy
-* @date 2018/3/2
+* @date 2018/4/9
 */
 public class UpmsSystemServiceMock extends BaseServiceMock<UpmsSystemMapper, UpmsSystem, UpmsSystemExample> implements UpmsSystemService {
 

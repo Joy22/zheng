@@ -1,10 +1,9 @@
-package ${package_name}.rpc.api.mock;
+package ${package_name}.rpc.api;
 
 import com.zheng.common.base.BaseServiceMock;
 import ${package_name}.dao.mapper.${model}Mapper;
 import ${package_name}.dao.model.${model};
 import ${package_name}.dao.model.${model}Example;
-import ${package_name}.rpc.api.${model}Service;
 
 /**
 * 降级实现${model}Service接口

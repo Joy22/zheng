@@ -1,18 +1,12 @@
-package com.zheng.upms.rpc.api.mock;
+package com.zheng.upms.rpc.api;
 
 import com.zheng.upms.dao.model.UpmsPermission;
 import com.zheng.upms.dao.model.UpmsRole;
 import com.zheng.upms.dao.model.UpmsUser;
-import com.zheng.upms.rpc.api.UpmsApiService;
 
 import java.util.List;
 
-/**
- * 降级实现UpmsApiService接口
- * @author Joy
- * @date 2018/3/5
- */
-public class UpmsApiServiceMock implements UpmsApiService{
+public class UpmsApiServiceMock implements UpmsApiService {
     @Override
     public UpmsUser selectUpmsUserByUsername(String username) {
         return null;

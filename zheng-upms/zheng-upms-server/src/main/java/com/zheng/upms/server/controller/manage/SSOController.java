@@ -3,7 +3,6 @@ package com.zheng.upms.server.controller.manage;
 import com.zheng.common.base.BaseController;
 import com.zheng.common.util.PropertiesFileUtil;
 import com.zheng.common.util.RedisUtil;
-import com.zheng.common.util.StringUtil;
 import com.zheng.upms.client.shiro.session.UpmsSession;
 import com.zheng.upms.client.shiro.session.UpmsSessionDao;
 import com.zheng.upms.common.constant.UpmsResult;
@@ -109,7 +108,7 @@ public class SSOController extends BaseController{
             LOGGER.debug("认证中心账号通过，带code回跳：{}", backurl);
             return "redirect:" + backurl;
         }
-        return "/sso/login/jsp";
+        return "/sso/login.jsp";
     }
 
     @ApiOperation(value = "登录")
